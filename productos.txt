@@ -1,0 +1,5 @@
+1|playera|50|ropa
+2|coca cola|10|refresco
+3|pepsi|10|refresco
+4|samsung x-80|2000|celular
+5|smart tv LG|5000|television

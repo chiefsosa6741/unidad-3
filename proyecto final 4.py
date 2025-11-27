@@ -104,7 +104,7 @@ def abrir_registro_ventas():
    # ------------------------------------
    productos = {}
    try:
-      BASE_DIR = r"C:\Users\Lorena Lopez\Pictures\pyhon"
+      BASE_DIR = os.path.dirname(os.path.abspath(__file__))
       archivof = Image.open(os.path.join(BASE_DIR, "haz un logo d un proyecto que tengo de hacer una base de datos que tome aportaciones (1).jpg"))
       with open(archivof, "r", encoding="utf-8") as archivo:
          for linea in archivo:
@@ -247,4 +247,5 @@ btn_acerca.pack(pady=10)
 # -------------------------
 # INICIO DE LA APP
 # -------------------------
+
 ventana.mainloop()

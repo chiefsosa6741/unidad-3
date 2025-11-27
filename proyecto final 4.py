@@ -4,11 +4,8 @@ from tkinter import messagebox
 from PIL import Image, ImageTk # Necesita instalar pillow: pip install pillow
 import os
 
-# -------------------------
-# FUNCIONES (pantallas vacías por ahora)
-# -------------------------
 from datetime import datetime
-
+total=0
 def mostrar_ticket(producto, precio, cantidad, total):
   ticket = tk.Toplevel()
   ticket.title("Ticket de Venta")
@@ -112,6 +109,7 @@ def abrir_registro_ventas():
             if len(partes) == 4:
                idp, desc, precio, cat = partes
                productos[desc] = float(precio)
+              
    except FileNotFoundError:
       messagebox.showerror("Error", "No se encontró el archivo productos.txt")
       ven.destroy()
@@ -232,6 +230,9 @@ def abrir_reportes():
           datos = linea.strip().split("|")
           if len(datos) == 4:
             tabla.insert("", tk.END, values=datos)
+            totalventa=float(datos[3])  # Convertir el cuarto campo a float
+            total=totalventa+total
+            print(total)
   except FileNotFoundError:
     messagebox.showerror("Error", "El archivo ventas.txt no existe.")
     ventana.destroy()
